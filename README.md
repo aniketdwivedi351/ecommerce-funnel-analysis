@@ -1,7 +1,7 @@
 # 🛒 E-Commerce User Funnel Analysis
 
 ### [🔗 Live Dashboard (Looker Studio)]((https://lookerstudio.google.com/reporting/7aa6dee7-5cbd-4e8d-8bc1-bd0d86435c8a))  
-### [🔗 Live Dashboard (Power BI)](YOUR_POWER_BI_LINK_HERE)
+
 
 ---
 
@@ -63,7 +63,7 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
   
 
 #### 🔹 Microsoft Power BI
-- Visualized **geographic heatmaps** to identify sales concentration in top cities.
+- Visualized **metrix heatmaps** to identify sales concentration in top cities.
 - Implemented **drill-down reports** for product categories and regional performance.  
 
 
@@ -94,14 +94,14 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
 ## 🖼️ Dashboard Preview
 
 ### Looker Studio
-![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
-![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
-![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
-![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
+![Looker Studio Dashboard Screenshot](dashboard/DAU.png)
+![Looker Studio Dashboard Screenshot](dashboard/Funnel_Analysis.png)
+![Looker Studio Dashboard Screenshot](dashboard/KPI's.png)
+![Looker Studio Dashboard Screenshot](dashboard/Purchasee_count.png)
 
 
 ### Power BI
-![Power BI Dashboard Screenshot](dashboard/powerbi_dashboard.png)
+![Power BI Dashboard Screenshot](dashboard/heatmap.png)
 
 ---
 
@@ -113,4 +113,19 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
 ---
 
 ## 📑 Repository Structure
+
+├── data/ # Raw & cleaned datasets
+├── analysis/ # Summary reports & outputs
+├── dashboard/ # Dashboard screenshots
+│ ├── looker_dashboard.png
+│ └── powerbi_dashboard.png
+├── README.md # Project documentation
+---
+
+
+
+
+
+
+
 
