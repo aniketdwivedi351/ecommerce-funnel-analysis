@@ -1,6 +1,6 @@
 # 🛒 E-Commerce User Funnel Analysis
 
-### [🔗 Live Dashboard (Looker Studio)](YOUR_LOOKER_STUDIO_LINK_HERE)  
+### [🔗 Live Dashboard (Looker Studio)]((https://lookerstudio.google.com/reporting/7aa6dee7-5cbd-4e8d-8bc1-bd0d86435c8a))  
 ### [🔗 Live Dashboard (Power BI)](YOUR_POWER_BI_LINK_HERE)
 
 ---
@@ -27,7 +27,7 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
 - **Data Cleaning & Processing:** SQL  
 - **Visualization & Dashboarding:**  
   - Google Looker Studio (interactive online reporting)  
-  - Microsoft Power BI (advanced drill-down analysis)  
+  - Microsoft Power BI (activity Heatmap)  
 - **Version Control:** Git & GitHub  
 
 ---
@@ -54,21 +54,19 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
 ### 4. **Dashboarding**
 
 #### 🔹 Google Looker Studio
-- Built a **funnel visualization** highlighting user progression at each stage.  
-- Added filters for **date ranges, product categories, and device types**.  
-- Visualized **geographic heatmaps** to identify sales concentration in top cities.  
-
-#### 🔹 Microsoft Power BI
+- Built a **funnel visualization** highlighting user progression at each stage.
+- Built a **DAU visualization** highlighting daily active users.
 - Designed a **KPI dashboard** tracking:  
   - Conversion Rate  
   - Cart Abandonment Rate  
-  - Average Order Value (AOV)  
-  - Returning Customer %  
-- Implemented **drill-down reports** for product categories and regional performance.  
-- Used **trend analysis visuals** to compare daily, weekly, and monthly engagement.
+  - Total Users   
+  
 
-### 5. **Insight Generation**
-- Synthesized outputs from SQL analysis and dashboards into **business insights** and **recommendations** (see below).
+#### 🔹 Microsoft Power BI
+- Visualized **geographic heatmaps** to identify sales concentration in top cities.
+- Implemented **drill-down reports** for product categories and regional performance.  
+
+
 
 ---
 
@@ -97,6 +95,10 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
 
 ### Looker Studio
 ![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
+![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
+![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
+![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
+
 
 ### Power BI
 ![Power BI Dashboard Screenshot](dashboard/powerbi_dashboard.png)
