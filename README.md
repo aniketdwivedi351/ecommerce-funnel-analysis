@@ -114,7 +114,7 @@ This project demonstrates how to combine **SQL data analysis** and **BI dashboar
 
 ## 📑 Repository Structure
 
-├── data/ # Raw & cleaned datasets
+├── data/ # Raw datasets
 ├── analysis/ # Summary reports & outputs
 ├── dashboard/ # Dashboard screenshots
 │ ├── looker_dashboard.png
