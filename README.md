@@ -1,160 +1,114 @@
-🛒 E-Commerce User Funnel Analysis
-📊 Live Dashboard - Looker Studio
-📊 Live Dashboard - Power BI (Optional)
-🎯 Project Objective
+# 🛒 E-Commerce User Funnel Analysis
 
-The purpose of this project is to analyze customer behavior on an e-commerce cosmetics platform. By building a user funnel from product views to final purchases, the analysis identifies critical drop-off points in the customer journey.
+### [🔗 Live Dashboard (Looker Studio)](YOUR_LOOKER_STUDIO_LINK_HERE)  
+### [🔗 Live Dashboard (Power BI)](YOUR_POWER_BI_LINK_HERE)
 
-The ultimate goal is to provide data-driven recommendations to:
+---
 
-Reduce cart abandonment
+## 🎯 Project Objective
 
-Improve overall conversion rates
+The objective of this project is to analyze the **user journey on an e-commerce cosmetics platform** using funnel analysis.  
+The main goals include:
 
-Optimize marketing & engagement strategies
+- Understanding how users progress from **homepage → product page → cart → checkout → purchase**.  
+- Identifying **where users drop off** in the funnel.  
+- Quantifying **conversion rates** and **cart abandonment rates**.  
+- Building **interactive dashboards** in **Looker Studio** and **Power BI** for stakeholder reporting.  
+- Recommending **strategies to improve conversions and reduce drop-offs**.  
 
-Enhance customer experience during checkout
+This project demonstrates how to combine **SQL data analysis** and **BI dashboards** to deliver **actionable business insights**.
 
-🛠️ Tools & Technologies
+---
 
-Database: SQLite (via DB Browser for SQLite)
+## 🛠️ Tools & Technologies Used
 
-Query Language: SQL (for data cleaning, preprocessing, and funnel analysis)
+- **Database:** SQLite (20GB dataset from Kaggle)  
+- **SQL Editor:** DB Browser for SQLite  
+- **Data Cleaning & Processing:** SQL  
+- **Visualization & Dashboarding:**  
+  - Google Looker Studio (interactive online reporting)  
+  - Microsoft Power BI (advanced drill-down analysis)  
+- **Version Control:** Git & GitHub  
 
-Dashboarding & Visualization:
+---
 
-Google Looker Studio (interactive funnel dashboards, activity heatmaps)
+## 📂 Project Workflow
 
-Microsoft Power BI (advanced visualization & drill-down reports)
+### 1. **Data Sourcing**
+- Sourced a **20GB event dataset** containing user logs such as product views, add-to-cart actions, checkouts, and purchases.
 
-Version Control & Collaboration: Git & GitHub
+### 2. **Data Cleaning**
+- Removed null values and duplicates.  
+- Standardized data types for timestamps and numeric fields.  
+- Prepared clean tables for funnel analysis.
 
-📂 Project Workflow
+### 3. **Exploratory Data Analysis (EDA)**
+- Built the **user funnel** from product view → add to cart → checkout → purchase.  
+- Key findings from EDA:  
+  - **Overall Conversion Rate:** ~2.5% of users who viewed a product completed a purchase.  
+  - **Cart Abandonment Rate:** ~68%, indicating a major drop-off between *Add to Cart* and *Checkout*.  
+  - **Checkout Completion Rate:** ~32% of users who reached checkout completed a purchase.  
+  - **Peak User Activity:** Highest engagement between **2 PM – 4 PM on weekdays**.  
+  - **Top Performing Category:** Skincare products generated the highest purchases.  
 
-Data Sourcing
+### 4. **Dashboarding**
 
-Obtained a 20GB event dataset from Kaggle containing user activity logs (views, add-to-cart, checkout, purchases).
+#### 🔹 Google Looker Studio
+- Built a **funnel visualization** highlighting user progression at each stage.  
+- Added filters for **date ranges, product categories, and device types**.  
+- Visualized **geographic heatmaps** to identify sales concentration in top cities.  
 
-Data Cleaning & Preprocessing (SQL)
+#### 🔹 Microsoft Power BI
+- Designed a **KPI dashboard** tracking:  
+  - Conversion Rate  
+  - Cart Abandonment Rate  
+  - Average Order Value (AOV)  
+  - Returning Customer %  
+- Implemented **drill-down reports** for product categories and regional performance.  
+- Used **trend analysis visuals** to compare daily, weekly, and monthly engagement.
 
-Removed duplicates
+### 5. **Insight Generation**
+- Synthesized outputs from SQL analysis and dashboards into **business insights** and **recommendations** (see below).
 
-Handled null/missing values
+---
 
-Standardized data types (timestamps, categorical values)
+## 📊 Key Insights & Recommendations
 
-Created derived columns (Day of week, Hour of day, Session ID)
+### 🔍 Insights
+1. **High Cart Abandonment** – Around 68% of users abandoned their carts.  
+2. **Low Overall Conversion** – Only 2.5% of product viewers ended up purchasing.  
+3. **Peak Traffic Hours** – Weekday activity peaks in the afternoon (2–4 PM).  
+4. **Product Categories** – Skincare drives the highest revenue; luxury cosmetics see high interest but low purchase.  
+5. **Regional Trends** – Tier-1 cities account for most sales, while Tier-2/3 cities show strong browsing but weak conversion.  
 
-Example Queries Used:
+---
 
--- Removing duplicates
-CREATE TABLE events_cleaned AS
-SELECT DISTINCT * FROM events;
+### 💡 Recommendations
+- **Simplify Checkout:** Introduce guest checkout, fewer form fields, and one-click payment.  
+- **Trust Signals:** Add **security badges, COD options, and return policies** to reduce payment hesitation.  
+- **Marketing Optimization:** Launch campaigns during **peak hours (2–4 PM)** for higher engagement.  
+- **Category Promotions:** Offer targeted discounts on **luxury cosmetics** to convert interest into sales.  
+- **Regional Strategy:** Localize offers for Tier-2/3 cities and emphasize **cash-on-delivery** to build trust.  
+- **Retention Tactics:** Use cart reminder emails/WhatsApp messages and **loyalty programs** for repeat purchases.  
 
--- Handling missing product IDs
-DELETE FROM events_cleaned
-WHERE product_id IS NULL;
+---
 
--- Creating day of week from event timestamp
-SELECT event_id,
-       strftime('%w', event_time) AS day_of_week,
-       strftime('%H', event_time) AS hour_of_day,
-       event_type,
-       user_id
-FROM events_cleaned;
+## 🖼️ Dashboard Preview
 
+### Looker Studio
+![Looker Studio Dashboard Screenshot](dashboard/looker_dashboard.png)
 
-Exploratory Data Analysis (EDA)
+### Power BI
+![Power BI Dashboard Screenshot](dashboard/powerbi_dashboard.png)
 
-Funnel step analysis using SQL
+---
 
-Activity heatmap (Day vs. Hour)
+## 📌 Project Takeaways
+- Learned how to **transform raw data into actionable insights**.  
+- Gained experience in **data storytelling through dashboards**.  
+- Strengthened business understanding of **conversion funnels in e-commerce**.  
 
-Product-level performance (top-selling products, revenue contribution)
+---
 
-Example Funnel Query:
+## 📑 Repository Structure
 
-SELECT event_type,
-       COUNT(DISTINCT user_id) AS users
-FROM events_cleaned
-WHERE event_type IN ('view', 'cart', 'purchase')
-GROUP BY event_type
-ORDER BY users DESC;
-
-
-Dashboarding
-
-Looker Studio: Built an interactive funnel visualization, heatmaps, and trend reports
-
-Power BI: Added drill-downs for product categories, RFM (Recency, Frequency, Monetary) analysis, and cart abandonment segmentation
-
-📊 Features included:
-
-Funnel Conversion Visualization (View → Cart → Purchase)
-
-Cart Abandonment %
-
-Time-of-day Activity Heatmap
-
-Top Products & Revenue Contributors
-
-User Segmentation by Device & Region
-
-Insight Generation
-
-Derived business insights (drop-off points, peak hours, top-performing SKUs)
-
-Built actionable recommendations
-
-📊 Key Insights
-
-Cart Abandonment:
-
-Identified a 68% cart abandonment rate, the most significant drop-off.
-
-Peak User Activity:
-
-Users are most active on weekdays between 2 PM – 4 PM.
-
-Product Trends:
-
-High revenue contribution from premium skincare items, while budget products drive volume but not conversions.
-
-Regional Trends:
-
-Tier-1 cities show higher conversions compared to Tier-2 and Tier-3 cities.
-
-✅ Recommendations
-
-Checkout Optimization:
-
-Simplify the checkout flow (fewer clicks, guest checkout option)
-
-Add trust badges & payment security logos
-
-Enable multiple payment methods (UPI, wallets, credit/debit cards)
-
-Reduce Cart Abandonment:
-
-Trigger automated cart reminder emails/notifications
-
-Offer limited-time discounts to recover abandoned carts
-
-Marketing & Engagement:
-
-Schedule email campaigns & ads during peak hours (2–4 PM)
-
-Personalize product recommendations based on browsing history
-
-Product Strategy:
-
-Bundle budget products with premium ones to increase average order value (AOV)
-
-Promote trending premium items with targeted ads
-
-🖼️ Dashboard Preview
-Looker Studio
-
-Power BI
-
-(Add Screenshot Here)g)
